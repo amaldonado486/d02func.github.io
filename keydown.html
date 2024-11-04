@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        border: solid 1px black;
+    }
+
+</style>
+<body>
+    <div id="key"></div>
+    <div id="contenedor" style="border: 0px;">
+        <!-- Aquí se agregarán y eliminarán elementos -->
+    </div>
+        
+</body>
+<script>
+
+var colorA = 'pink';
+var colorS = 'orange';
+var colorD = 'SkyBlue';
+eKey = document.querySelector('#key');
+
+
+document.addEventListener('keydown', function (event) {
+  console.log(event.key);
+    if (event.key === 'd') {
+        eKey.style.backgroundColor=colorD
+    } 
+    if (event.key === 'a') {
+      eKey.style.backgroundColor=colorA 
+    } else if (event.key === 's') {
+        eKey.style.backgroundColor=colorS
+    } 
+    else
+    {
+      if (event.key==='e'){
+        agregarElemento('brown');
+      }
+      if (event.key==='q')     {
+        agregarElemento('purple');
+      }else if ( event.key==='w'){
+        agregarElemento('gray');
+      }
+    } 
+  }
+
+)
+
+
+function agregarElemento(color) {
+// Obtenemos el elemento contenedor por su ID
+    contenedor = document.getElementById("contenedor");
+// Creamos un nuevo elemento <div>
+    nuevoElemento = document.createElement("div");
+    nuevoElemento.style.backgroundColor=color;
+// Asignamos un texto al nuevo elemento
+    nuevoElemento.textContent = "Elemento agregado";
+// Agregamos el nuevo elemento al contenedor
+    contenedor.appendChild(nuevoElemento);
+}
+
+</script>
+</html>
